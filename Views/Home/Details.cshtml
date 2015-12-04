@@ -2,8 +2,13 @@
 
 @{
     ViewBag.Title = "Details";
+    int rowindex = 0;
 }
-
+<style type="text/css">
+    table, tr th, tr td{
+        border: solid 1px;
+    }
+</style>
 <h2>Details</h2>
 
 <p>
@@ -11,6 +16,9 @@
 </p>
 <table>
     <tr>
+        <th>
+            Index
+        </th>
         <th>
             @Html.DisplayNameFor(model => model.ipaddress)
         </th>
@@ -27,7 +35,11 @@
     </tr>
 
 @foreach (var item in Model) {
+    rowindex++;
     <tr>
+        <td>
+            @rowindex
+        </td>
         <td>
             @Html.DisplayFor(modelItem => item.ipaddress)
         </td>
